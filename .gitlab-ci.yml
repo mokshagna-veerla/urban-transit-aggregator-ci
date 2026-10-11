@@ -1,0 +1,25 @@
+stages:
+  - build
+  - verify
+
+default:
+  image: node:20
+
+frontend-build:
+  stage: build
+  script:
+    - cd frontend
+    - npm ci
+    - npm run build
+  artifacts:
+    paths:
+      - frontend/dist/
+    expire_in: 1 week
+
+backend-verify:
+  stage: verify
+  script:
+    - cd backend
+    - npm ci
+    - node --check server.js
+    - node --check routes/transit.js
