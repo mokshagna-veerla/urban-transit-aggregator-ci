@@ -13,6 +13,20 @@ A mobile-first multimodal route comparison demo using:
 - Node.js 18+ recommended
 - npm 9+
 
+## Deploy on Vercel
+
+The root `vercel.json` configures two services in one Vercel project:
+
+- `frontend` serves the Vite app for all paths other than `/api/*`.
+- `backend` serves the Express API at `/api/*`.
+
+The frontend calls the API through the same-origin `/api/compare-routes` path.
+There are currently no service bindings because the backend does not call a
+separate service; browser requests use the public API rewrite instead.
+
+Run `vercel dev` from the repository root to develop with both services, or
+deploy the repository root as one Vercel project.
+
 ## Run the backend
 
 ```bash

@@ -7,7 +7,7 @@ import MapView from "./components/MapView.jsx";
 import RouteCard from "./components/RouteCard.jsx";
 import TelemetryCard from "./components/TelemetryCard.jsx";
 
-const API_URL = "http://localhost:5000/api/compare-routes";
+const API_URL = "/api/compare-routes";
 const FILTERS = ["All", "Public Transit", "Cabs/Bikes"];
 
 export default function App() {
